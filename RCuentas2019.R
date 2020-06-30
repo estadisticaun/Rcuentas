@@ -1,5 +1,7 @@
 # Análisis de preguntas del proceso de Rendición de Cuentas del año 2019
 
+install.packages("knitr")
+
 # Librerías ----
 
 library(RColorBrewer)
@@ -46,13 +48,23 @@ docs <- tm_map(docs, removeWords, c("pej", "i", "ii", "iii", "iv", "v", "vi",
                                     "unc", "universidad", "nacional", "colombia",
                                     "cuáles", "cuales", "cuándo", "cómo", "cuál", "hacer",
                                     "saber", "gracias", "unal", "cuenta", "quisiera", "van",
-                                    "launalcuenta", "tan", "pregunta", "gustaría", "así", "respecto")) 
+                                    "launalcuenta", "tan", "pregunta", "gustaría", "así", "respecto",
+                                    "cada")) 
+
+View(as.data.frame(docs))
 
 # Eliminar espacios en blanco
 # 
-# docs <- tm_map(docs, stripWhitespace)
-# 
-# docs <- tm_map(docs, PlainTextDocument)
+ docs <- tm_map(docs, stripWhitespace)
+
+ docs <- tm_map(docs, PlainTextDocument)
+
+cc <- docs[["content"]][["content"]] 
+
+View(cc) 
+
+write.csv2(cc, file = "Data/MyData.csv",  row.names = FALSE)
+
 
 # Matriz
 
@@ -65,3 +77,8 @@ d <- data.frame(word = names(v),freq=v)
 
 nn <- as.character(docs[["content"]]$content)
 write.csv(nn, file = "MyData.csv",  row.names = FALSE)
+
+
+
+
+
