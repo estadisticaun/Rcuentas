@@ -1,13 +1,19 @@
 ---
-title: "Análisis Preguntas Rendición de Cuentas"
-author: "Dirección Nacional de Planeación y Estadística"
-date: "30 de junio de 2020"
+title: "<h2>Análisis Preguntas Proceso de Rendición de Cuentas 2019</h2>"
+author: "<i>Dirección Nacional de Planeación y Estadística <br> Universidad Nacional de Colombia</i>"
+date: "<i>Bogotá, 30 de junio de 2020</i>"
 output: 
   html_document:
     toc: yes
     toc_float: yes
     css: Estilo.css
 ---
+
+<br>
+<h4><DIV ALIGN="right"><a href="https://github.com/estadisticaun/Rcuentas/raw/master/RC_PDF.pdf">Descargar documento en PDF</a></DIV></h4>
+<br>
+
+
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -33,7 +39,7 @@ Fuentes$Pregunta <- as.character(Fuentes$Pregunta)
 ### Medio de recepción
 
 ```{r, echo=FALSE}
-# <a href="#top">Back to top</a>
+
 library(ggplot2)
 ggplot(data=Fuentes, aes(Fuentes$Medio)) +
   geom_bar(fill = "#a6bddb")+
@@ -59,5 +65,6 @@ ggplot(data=Fuentes, aes(Fuentes$Medio)) +
 
 ![](Imagenes/Nube5000.png) 
 
+<a href="https://github.com/estadisticaun/Rcuentas/raw/master/RC_PDF.pdf">Descargar documento en PDF</a>
 
 
