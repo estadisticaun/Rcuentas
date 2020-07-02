@@ -1,12 +1,8 @@
 ---
-title: "Análisis Preguntas Rendición de Cuentas"
-author: "Dirección Nacional de Planeación y Estadística"
-date: "30 de junio de 2020"
-output: 
-  html_document:
-    toc: yes
-    toc_float: yes
-    css: Estilo.css
+title: "Análissis Rendición de Cuentas"
+author: "DNPE"
+date: "2 de julio de 2020"
+output: pdf_document
 ---
 
 ```{r setup, include=FALSE}
@@ -56,8 +52,4 @@ ggplot(data=Fuentes, aes(Fuentes$Medio)) +
 
 ### Cincuenta
 
-
 ![](Imagenes/Nube5000.png) 
-
-
-

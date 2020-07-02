@@ -11,6 +11,7 @@ library(NLP)
 library(tm)
 library(tidyverse)
 library(readr)
+library(knitr)
 
 # Inicio
 
@@ -18,6 +19,27 @@ Fuentes <- read.delim("Data/Preguntas.txt", header = TRUE)
 
 Fuentes$Medio <- as.character(Fuentes$Medio)
 Fuentes$Pregunta <- as.character(Fuentes$Pregunta)
+
+Fuentes %>% group_by(Medio) %>% count()
+
+barplot(table(Fuentes$Medio))
+
+ggplot(data=Fuentes, aes(Fuentes$Medio)) +
+  geom_bar(fill = "#a6bddb")+
+  geom_text(stat='count', aes(label=..count..), vjust=-1)+
+  ggtitle("Cantidad de preguntas recibidas según medio de recepción \n") +
+  xlab("\n Medio de recepción de preguntas") + ylab("Total de preguntas \n") +
+  theme(
+    axis.title.x = element_text(size=14, face="bold"),
+    axis.title.y = element_text(size=14, face="bold"),
+    axis.text = element_text(size = 12, color = "red"),
+    legend.position="top"
+  )
+  
+  
+  
+  geom_text(aes(label=len), vjust=-0.3, size=3.5)+
+  theme_minimal()
 
 # Encoding(Fuentes)  <- "UTF-8"
 
@@ -51,21 +73,6 @@ docs <- tm_map(docs, removeWords, c("pej", "i", "ii", "iii", "iv", "v", "vi",
                                     "launalcuenta", "tan", "pregunta", "gustaría", "así", "respecto",
                                     "cada")) 
 
-View(as.data.frame(docs))
-
-# Eliminar espacios en blanco
-# 
- docs <- tm_map(docs, stripWhitespace)
-
- docs <- tm_map(docs, PlainTextDocument)
-
-cc <- docs[["content"]][["content"]] 
-
-View(cc) 
-
-write.csv2(cc, file = "Data/MyData.csv",  row.names = FALSE)
-
-
 # Matriz
 
 docs <- TermDocumentMatrix(docs)
@@ -73,11 +80,20 @@ m <- as.matrix(docs)
 v <- sort(rowSums(m),decreasing=TRUE)
 d <- data.frame(word = names(v),freq=v)
 
-#Exportar
+write.csv(d, file = "Data/Frecuencias.csv",  row.names = FALSE)
 
-nn <- as.character(docs[["content"]]$content)
-write.csv(nn, file = "MyData.csv",  row.names = FALSE)
+# Eliminar espacios en blanco
 
+docs <- tm_map(docs, stripWhitespace)
+docs <- tm_map(docs, PlainTextDocument)
+cc <- docs[["content"]][["content"]] 
+
+write.csv(cc, file = "Data/General.csv",  row.names = FALSE)
+
+
+# Facebook
+# Twitter
+# Youtube
 
 
 
