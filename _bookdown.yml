@@ -1,0 +1,6 @@
+language:
+  label:
+    fig: "Figura "
+    tab: "Tabla "
+    
+# Revisar: https://stackoverflow.com/questions/48247787/how-to-change-caption-label-names-in-a-single-document-with-bookdown    

@@ -3,10 +3,12 @@ title: "<h2>Análisis Preguntas Proceso de Rendición de Cuentas 2019</h2>"
 author: "<i>Dirección Nacional de Planeación y Estadística <br> Universidad Nacional de Colombia</i>"
 date: "<i>Bogotá, 30 de junio de 2020</i>"
 output: 
-  html_document:
+  bookdown::html_document2:
     toc: yes
     toc_float: yes
+    theme: journal
     css: Estilo.css
+    number_sections: false
 ---
 
 <br>
@@ -19,11 +21,13 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Presentación
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+## Introducción
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+Este documento presenta el análisis de texto a partir de las preguntas recibidas en el proceso permanente de [Rendición de Cuentas](http://launalcuenta.unal.edu.co/) de la [Universidad Nacional de Colombia](https://unal.edu.co) para la vigencia 2019. El contenido de las preguntas aquí analizadas se recibió antes, durante y después de la audiencia de rendición de cuentas institucional la cual se llevo a cabo el jueves 11 de junio del año en curso. Estas preguntas se recibieron a través de cuatro medios de comunicación institucional: Página web de [Rendición de Cuentas](http://launalcuenta.unal.edu.co/), [Facebook Live](https://www.facebook.com/UNALOficial/), [Twitter](https://twitter.com/unaloficial?lang=es) y [YouTube](https://www.youtube.com/channel/UC1wJbI-Z0U24G-H_64SSNPg).
+
+Como se presenta en la Figura \@ref(fig:F1Medio), los medios de comunicación a través de los cuales ...
+
 
 ## Análisis descriptivo
 
@@ -38,7 +42,9 @@ Fuentes$Pregunta <- as.character(Fuentes$Pregunta)
 
 ### Medio de recepción
 
-```{r, echo=FALSE}
+
+
+```{r F1Medio, echo=FALSE, fig.show='hold', fig.cap ='<br> Fuente: Dirección Nacional de Planeación y Estadística'}
 
 library(ggplot2)
 ggplot(data=Fuentes, aes(Fuentes$Medio)) +
@@ -53,18 +59,18 @@ ggplot(data=Fuentes, aes(Fuentes$Medio)) +
     axis.title.y = element_text(size=14, face="bold"),
     axis.text.x =  element_text(size = 12, color = "red"),
     axis.text.y =  element_text(size = 12),
-    legend.position="top"
-  )
+    legend.position="top")
 
+```
+
+```{r fig1, echo=FALSE, fig.cap= "My Figure Caption"}
+plot(1,1)
 ```
 
 ## Nubes de Palabras
 
 ### Cincuenta
 
-
 ![](Imagenes/Nube5000.png) 
-
-<a href="https://github.com/estadisticaun/Rcuentas/raw/master/RC_PDF.pdf">Descargar documento en PDF</a>
 
 
