@@ -26,20 +26,22 @@ barplot(table(Fuentes$Medio))
 
 ggplot(data=Fuentes, aes(Fuentes$Medio)) +
   geom_bar(fill = "#a6bddb")+
-  geom_text(stat='count', aes(label=..count..), vjust=-1)+
-  ggtitle("Cantidad de preguntas recibidas según medio de recepción \n") +
+  geom_text(stat='count', aes(label=..count..), vjust=-1, size = 5)+
+  ggtitle("Cantidad de preguntas recibidas según medio de recepción", 
+          subtitle = "Proceso de Rendición de Cuentas - 2019 \n") +
   xlab("\n Medio de recepción de preguntas") + ylab("Total de preguntas \n") +
   theme(
     axis.title.x = element_text(size=14, face="bold"),
     axis.title.y = element_text(size=14, face="bold"),
-    axis.text = element_text(size = 12, color = "red"),
+    axis.text.x =  element_text(size = 12, color = "red"),
     legend.position="top"
   )
   
   
   
-  geom_text(aes(label=len), vjust=-0.3, size=3.5)+
-  theme_minimal()
+geom_text(aes(label=len), vjust=-0.3, size=3.5)+
+
+  ]]]X111theme_minimal()
 
 # Encoding(Fuentes)  <- "UTF-8"
 

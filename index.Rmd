@@ -1,7 +1,7 @@
 ---
-title: "<h2>Análisis Preguntas Proceso de Rendición de Cuentas 2019</h2>"
+title: "<h2>Análisis Preguntas Proceso de Rendición de <br> Cuentas 2019</h2>"
 author: "<i>Dirección Nacional de Planeación y Estadística <br> Universidad Nacional de Colombia</i>"
-date: "<i>Bogotá, 30 de junio de 2020</i>"
+date: "`r format(Sys.Date(), '%d de %B de %Y')`"
 output: 
   bookdown::html_document2:
     toc: yes
@@ -10,6 +10,14 @@ output:
     css: Estilo.css
     number_sections: false
 ---
+
+```{js logo-js, echo=FALSE}
+$(document).ready(function() {
+  $('#header').parent().prepend('<div id=\"logo\"><a href="http://estadisticas.unal.edu.co/home/" target="_blank"><img src=\"https://estadisticaun.github.io/BoletinAmazonia/img/logoUNAL.jpg\" style=\"position:absolute; top:0; right:0; padding:37px; height:120px\"></div>');
+  $('#header').css('margin-right', '60px')
+});
+```
+
 
 <br>
 <h4><DIV ALIGN="right"><a href="https://github.com/estadisticaun/Rcuentas/raw/master/RC_PDF.pdf">Descargar documento en PDF</a></DIV></h4>
