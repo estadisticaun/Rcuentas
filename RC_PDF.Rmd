@@ -13,10 +13,10 @@ output:
 
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = FALSE, fig.cap ='Fuente: Dirección Nacional de Planeación y Estadística', fig.show='hold')
 ```
 
-## Introducción{-}
+## Introducción
 
 Este documento presenta el análisis de texto a partir de las preguntas recibidas en el proceso permanente de [Rendición de Cuentas](http://launalcuenta.unal.edu.co/) de la [Universidad Nacional de Colombia](https://unal.edu.co) para la vigencia 2019. El contenido de las preguntas aquí analizadas se recibió antes, durante y después de la audiencia de rendición de cuentas institucional la cual se llevo a cabo el jueves 11 de junio del año en curso. Estas preguntas se recibieron a través de cuatro medios de comunicación institucional: Página web de [Rendición de Cuentas](http://launalcuenta.unal.edu.co/), [Facebook Live](https://www.facebook.com/UNALOficial/), [Twitter](https://twitter.com/unaloficial?lang=es) y [YouTube](https://www.youtube.com/channel/UC1wJbI-Z0U24G-H_64SSNPg).
 
@@ -25,7 +25,7 @@ Como se presenta en la Figura \@ref(fig:F1Medio), los medios de comunicación a 
 
 ## Análisis descriptivo
 
-```{r, echo=FALSE}
+```{r}
 Fuentes <- read.delim("Data/Preguntas.txt", header = TRUE)
 
 Fuentes$Medio <- as.character(Fuentes$Medio)
@@ -38,7 +38,7 @@ Fuentes$Pregunta <- as.character(Fuentes$Pregunta)
 
 
 
-```{r F1Medio, echo=FALSE, fig.show='hold', fig.cap ='<br> Fuente: Dirección Nacional de Planeación y Estadística'}
+```{r F1Medio}
 
 library(ggplot2)
 ggplot(data=Fuentes, aes(Fuentes$Medio)) +
@@ -61,4 +61,6 @@ ggplot(data=Fuentes, aes(Fuentes$Medio)) +
 
 ### Cincuenta
 
-![](Imagenes/Nube5000.png) 
+```{r F2Nube1, out.width='80%'}
+knitr::include_graphics('Imagenes/Nube5000.png')
+```

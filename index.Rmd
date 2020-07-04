@@ -26,7 +26,7 @@ $(document).ready(function() {
 
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = FALSE, fig.cap ='<br> Fuente: Dirección Nacional de Planeación y Estadística', fig.show='hold')
 ```
 
 
@@ -39,7 +39,7 @@ Como se presenta en la Figura \@ref(fig:F1Medio), los medios de comunicación a 
 
 ## Análisis descriptivo
 
-```{r, echo=FALSE}
+```{r}
 Fuentes <- read.delim("Data/Preguntas.txt", header = TRUE)
 
 Fuentes$Medio <- as.character(Fuentes$Medio)
@@ -52,7 +52,7 @@ Fuentes$Pregunta <- as.character(Fuentes$Pregunta)
 
 
 
-```{r F1Medio, echo=FALSE, fig.show='hold', fig.cap ='<br> Fuente: Dirección Nacional de Planeación y Estadística'}
+```{r F1Medio}
 
 library(ggplot2)
 ggplot(data=Fuentes, aes(Fuentes$Medio)) +
@@ -75,6 +75,6 @@ ggplot(data=Fuentes, aes(Fuentes$Medio)) +
 
 ### Cincuenta
 
-![](Imagenes/Nube5000.png) 
-
-
+```{r F2Nube1, out.width='80%'}
+knitr::include_graphics('Imagenes/Nube5000.png')
+```

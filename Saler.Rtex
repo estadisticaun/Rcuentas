@@ -1,0 +1,17 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+You can type R commands in your \LaTeX{} document and they will be properly run and the output printed in the document.
+
+<<>>=
+# Create a sequence of numbers
+X = 2:10
+
+# Display basic statistical measures
+summary(X)
+
+@
+\end{document}
