@@ -71,10 +71,6 @@ ggplot(data=Fuentes, aes(Fuentes$Medio)) +
 
 ```
 
-```{r fig1, echo=FALSE, fig.cap= "My Figure Caption"}
-plot(1,1)
-```
-
 ## Nubes de Palabras
 
 ### Cincuenta

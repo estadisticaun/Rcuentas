@@ -1,6 +1,7 @@
 ---
 title: "<h2>Análisis Preguntas Proceso de Rendición de <br> Cuentas 2019</h2>"
-author: "<i>Dirección Nacional de Planeación y Estadística <br> Universidad Nacional de Colombia</i>"
+subtitle: "Universidad Nacional de Colombia"
+author: "<i>Dirección Nacional de Planeación y Estadística</i>"
 date: "`r format(Sys.Date(), '%d de %B de %Y')`"
 output: 
   bookdown::pdf_document2:
@@ -9,6 +10,7 @@ output:
     includes:
       in_header: Contenido.tex
 ---
+
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -53,10 +55,6 @@ ggplot(data=Fuentes, aes(Fuentes$Medio)) +
     axis.text.y =  element_text(size = 12),
     legend.position="top")
 
-```
-
-```{r fig1, echo=FALSE, fig.cap= "My Figure Caption"}
-plot(1,1)
 ```
 
 ## Nubes de Palabras
