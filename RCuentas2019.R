@@ -37,11 +37,6 @@ ggplot(data=Fuentes, aes(Fuentes$Medio)) +
     legend.position="top"
   )
   
-  
-  
-geom_text(aes(label=len), vjust=-0.3, size=3.5)+
-
-  ]]]X111theme_minimal()
 
 # Encoding(Fuentes)  <- "UTF-8"
 
@@ -73,7 +68,8 @@ docs <- tm_map(docs, removeWords, c("pej", "i", "ii", "iii", "iv", "v", "vi",
                                     "cuáles", "cuales", "cuándo", "cómo", "cuál", "hacer",
                                     "saber", "gracias", "unal", "cuenta", "quisiera", "van",
                                     "launalcuenta", "tan", "pregunta", "gustaría", "así", "respecto",
-                                    "cada")) 
+                                    "cada", "puede", "puedo", "quiero", "hace", "parte", "realizar",
+                                    "manera")) 
 
 # Matriz
 

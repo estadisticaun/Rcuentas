@@ -24,7 +24,6 @@ $(document).ready(function() {
 <br>
 
 
-
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, fig.cap ='<br> Fuente: Dirección Nacional de Planeación y Estadística', fig.show='hold')
 ```
