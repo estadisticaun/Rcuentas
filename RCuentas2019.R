@@ -147,4 +147,22 @@ d <- data.frame(word = names(v),freq=v)
 write.csv(d, file = "Data/FrecRedes.csv",  row.names = FALSE)
 
 
+# NUBES DE PALABRAS
+
+
+pal <- brewer.pal(4,"Dark2")
+pal1 <- brewer.pal(4,"Set1")
+
+set.seed(6987452)
+
+# Nubes de palabras general
+
+Gen_30 <- wordcloud(NuevaCSV1$word, freq = NuevaCSV1$freq, min.freq=1, max.words=30,  color = pal, rot.per=0.35, scale=c(3,0.8))
+Gen_50 <- wordcloud(NuevaCSV1$word, freq = NuevaCSV1$freq, min.freq=1, max.words=50,  color = pal, rot.per=0.35, scale=c(3,0.8))
+
+# Nubes de palabras redes sociales
+
+Red_20 <- wordcloud(Redes$word, freq = Redes$freq, min.freq=1, max.words=20,  color = pal1, rot.per=0.35, scale=c(3,0.8))
+
+
 
